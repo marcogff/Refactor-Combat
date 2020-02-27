@@ -9,8 +9,8 @@ public class PlayerController : MonoBehaviour
     private float speed = 5f;
     private float speedSmooth = 10f;
     
-    private float _moveHorizontal;
-    private float _moveVertical;
+    private float _horizontal;
+    private float _vertical;
 
     private float _posX;
     private float _posZ;
@@ -24,17 +24,17 @@ public class PlayerController : MonoBehaviour
     {
         // if (isSmooth)
         // {
-        //     _moveHorizontal = Input.GetAxis("Horizontal");
-        //     _moveVertical = Input.GetAxis("Vertical");
+        //     _horizontal = Input.GetAxis("Horizontal");
+        //     _vertical = Input.GetAxis("Vertical");
 
-        //     _posX = _moveHorizontal * speedSmooth * Time.deltaTime;
-        //     _posZ = _moveVertical * speedSmooth * Time.deltaTime;
+        //     _posX = _horizontal * speedSmooth * Time.deltaTime;
+        //     _posZ = _vertical * speedSmooth * Time.deltaTime;
         // }
 
-        _moveHorizontal = Input.GetAxis("Horizontal");
-        _moveVertical = Input.GetAxis("Vertical");
+        _horizontal = Input.GetAxis("Horizontal");
+        _vertical = Input.GetAxis("Vertical");
 
-        transform.position = transform.position + new Vector3(_moveHorizontal * speed * Time.deltaTime, 0, _moveVertical * speed * Time.deltaTime);
+        transform.position = transform.position + new Vector3(_horizontal * speed * Time.deltaTime, 0, _vertical * speed * Time.deltaTime);
 
-    }
+}
 }
